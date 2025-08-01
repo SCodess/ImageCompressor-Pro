@@ -12,8 +12,7 @@
 
 Experience it now: [ImageCompressor Pro Live](https://your-username.github.io/image-compressor-pro/)
 
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/aebee1d0-4e87-4ec4-8210-dcd8d59c94d8" />
-
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/72bfadf1-6a9f-40c7-8217-57304e60b442" />
 
 ---
 
