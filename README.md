@@ -1,6 +1,9 @@
 # ImageCompressor Pro
 
 ---
+▶️ Live Demo
+
+Experience it now: ImageCompressor Pro Live
 
 ## 🔍 Overview
 
