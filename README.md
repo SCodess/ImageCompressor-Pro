@@ -26,10 +26,6 @@
 
 ---
 
----
-
----
-
 ## 🤝 Contributing
 
 Contributions, issues, and feature requests are welcome! Feel free to check [issues page](https://github.com/your-username/image-compressor-pro/issues) or submit a pull request.
