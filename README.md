@@ -1,13 +1,18 @@
 # ImageCompressor Pro
 
 ---
-▶️ Live Demo
-
-Experience it now: ImageCompressor Pro Live
 
 ## 🔍 Overview
 
 **ImageCompressor Pro** is a free, **100% browser-based** image compression tool that reduces file size by up to **90%** while preserving visual quality. Designed for web developers, bloggers, marketers, and photographers, our tool optimizes JPG, PNG, GIF, and WebP images without uploading them to a server—ensuring **maximum privacy** and **lightning-fast** results.
+
+---
+
+## ▶️ Live Demo
+
+Experience it now: [ImageCompressor Pro Live](https://your-username.github.io/image-compressor-pro/)
+
+![Preview of ImageCompressor Pro](https://yourdomain.com/images/social-preview.jpg)
 
 ---
 
