@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ImageCompressor Pro</title>
+    <link rel="icon" type="image/svg+xml" href="img/logo.svg" />
+
+    <meta
+      name="description"
+      content="Compress JPG, PNG, GIF & WebP images online without quality loss. Reduce file sizes by up to 90% with our free browser-based tool. No uploads - 100% private."
+    />
+
+    <!-- Canonical & Social Meta Tags -->
+    <link rel="canonical" href="https://yourdomain.com" />
+    <meta
+      property="og:title"
+      content="Free Online Image Compressor - Reduce File Size by 90%"
+    />
+    <meta
+      property="og:description"
+      content="Compress images online without quality loss. Reduce file sizes by up to 90% with our free browser-based tool."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/images/social-preview.jpg"
+    />
+    <meta property="og:site_name" content="ImageCompressor Pro" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Free Online Image Compressor - Reduce File Size by 90%"
+    />
+    <meta
+      name="twitter:description"
+      content="Compress images online without quality loss. 100% browser-based for maximum privacy."
+    />
+    <meta
+      name="twitter:image"
+      content="https://yourdomain.com/images/social-preview.jpg"
+    />
+
+    <!-- Schema.org -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ImageCompressor Pro",
+        "url": "https://yourdomain.com",
+        "description": "Free online tool to compress images without quality loss",
+        "applicationCategory": "ImageEditor",
+        "operatingSystem": "Web Browser",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+
+    <!--  Google Fonts CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!--  Font Awesome -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <nav class="navbar">
+          <a href="#" class="logo">
+            <i class="fas fa-compress-alt"></i>
+            <span>ImageCompressor Pro</span>
+          </a>
+          <div class="nav-links" id="nav-links">
+            <a href="#tool">Compressor</a>
+            <a href="#features">Features</a>
+            <a href="#tools">Tools</a>
+            <a href="#faq">FAQ</a>
+          </div>
+          <button class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Optimize Your Images Without Losing Quality</h1>
+            <p>
+              Reduce image file sizes by up to 90% while preserving visual
+              quality. Perfect for websites, social media, and storage
+              optimization.
+            </p>
+            <div class="hero-buttons">
+              <a href="#tool" class="btn">Start Compressing Now</a>
+              <a href="#features" class="btn btn-secondary">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Counter -->
+    <div class="container">
+      <div class="stats-counter">
+        <div class="stat-box">
+          <div class="stat-value">2M+</div>
+          <div class="stat-label">Images Compressed</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">95%</div>
+          <div class="stat-label">Average Savings</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-value">100%</div>
+          <div class="stat-label">Client-Side Privacy</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compression Tool -->
+    <section id="tool" class="section">
+      <div class="container">
+        <div class="tool-container">
+          <div class="tool-header">
+            <h3>Free Image Compressor</h3>
+            <p>Compress multiple images at once with no quality loss</p>
+          </div>
+          <div class="tool-body">
+            <div class="upload-area" id="upload-area">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <h4>Drag & Drop Your Images Here</h4>
+              <p>Or click to browse files (Max 20 images, 10MB each)</p>
+              <input
+                type="file"
+                id="file-input"
+                accept="image/*"
+                multiple
+                style="display: none"
+              />
+              <button class="btn" id="select-btn">Select Images</button>
+            </div>
+
+            <div class="progress-container" id="progress-container">
+              <div class="progress-bar" id="progress-bar">
+                <div class="progress-text" id="progress-text">0%</div>
+              </div>
+            </div>
+
+            <div id="file-list" class="file-list-container">
+              <h4>Selected Files:</h4>
+              <div id="file-names" class="file-names"></div>
+            </div>
+
+            <div class="options-panel">
+              <h4>Compression Settings</h4>
+              <div class="options-grid">
+                <div class="option-item">
+                  <label for="format">Output Format</label>
+                  <select id="format">
+                    <option value="original">Original Format</option>
+                    <option value="webp">WebP (Recommended)</option>
+                    <option value="jpeg">JPG</option>
+                    <option value="png">PNG</option>
+                  </select>
+                </div>
+                <div class="option-item">
+                  <label for="quality">Quality Level</label>
+                  <select id="quality">
+                    <option value="0.8">High (80%)</option>
+                    <option value="0.7" selected>Medium (70%)</option>
+                    <option value="0.6">Low (60%)</option>
+                    <option value="0.5">Very Low (50%)</option>
+                  </select>
+                </div>
+                <div class="option-item">
+                  <label for="resize">Resize</label>
+                  <select id="resize">
+                    <option value="no" selected>Don't Resize</option>
+                    <option value="1920">Max Width 1920px</option>
+                    <option value="1280">Max Width 1280px</option>
+                    <option value="800">Max Width 800px</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="action-buttons">
+              <button class="btn" id="compress-btn">
+                <i class="fas fa-bolt"></i> Compress Images Now
+              </button>
+              <button class="btn btn-secondary" id="reset-btn">
+                <i class="fas fa-redo"></i> Reset
+              </button>
+            </div>
+
+            <div class="preview-section" id="single-preview">
+              <div class="preview-box">
+                <h4>Original Image</h4>
+                <div class="preview-img" id="original-preview">
+                  <img
+                    src=""
+                    alt="Original image preview"
+                    loading="lazy"
+                    id="original-img-preview"
+                  />
+                  <i class="fas fa-image"></i>
+                </div>
+                <div class="preview-stats">
+                  <div class="stat-item">
+                    <div class="value" id="original-size">-</div>
+                    <div class="label">File Size</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="value" id="original-dimensions">-</div>
+                    <div class="label">Dimensions</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="value" id="original-format">-</div>
+                    <div class="label">Format</div>
+                  </div>
+                </div>
+              </div>
+              <div class="preview-box">
+                <h4>Compressed Image</h4>
+                <div class="preview-img" id="compressed-preview">
+                  <img
+                    src=""
+                    alt="Compressed image preview"
+                    loading="lazy"
+                    id="compressed-img-preview"
+                  />
+                  <i class="fas fa-image"></i>
+                </div>
+                <div class="preview-stats">
+                  <div class="stat-item">
+                    <div class="value" id="compressed-size">-</div>
+                    <div class="label">File Size</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="value" id="compressed-dimensions">-</div>
+                    <div class="label">Dimensions</div>
+                  </div>
+                  <div class="stat-item">
+                    <div class="value" id="compressed-format">-</div>
+                    <div class="label">Format</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="results-container" id="results-container">
+              <div class="results-header">
+                <h3>Compression Results</h3>
+                <button class="btn btn-success" id="download-all">
+                  <i class="fas fa-download"></i> Download All as ZIP
+                </button>
+              </div>
+              <div id="results-grid" class="results-grid"></div>
+            </div>
+          </div>
+        </div>
+        <div class="compression-stats">
+          <p id="compression-stats">Upload images to see compression results</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Smart Compression Features</h2>
+          <p>
+            Our advanced algorithms ensure the best balance between quality and
+            file size
+          </p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fas fa-layer-group"></i>
+            <h3>Batch Processing</h3>
+            <p>
+              Compress dozens of images at once. Perfect for optimizing entire
+              galleries or websites.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fab fa-chrome"></i>
+            <h3>WebP Conversion</h3>
+            <p>
+              Convert images to next-gen WebP format for superior compression
+              and faster loading.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-exchange-alt"></i>
+            <h3>Before/After Preview</h3>
+            <p>
+              Compare original and compressed images to ensure quality meets
+              your standards.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-magic"></i>
+            <h3>Quality Preservation</h3>
+            <p>
+              Advanced algorithms maintain visual quality while reducing file
+              size significantly.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-bolt"></i>
+            <h3>Lightning Fast</h3>
+            <p>
+              Client-side processing means no waiting for server responses -
+              instant results.
+            </p>
+          </div>
+          <div class="feature-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Privacy First</h3>
+            <p>
+              Your images never leave your device - processed 100% in your
+              browser.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section id="tools" class="section bonus-tools">
+      <div class="container">
+        <div class="section-header">
+          <h2>Premium Tools for Creators</h2>
+          <p>Enhance your workflow with our additional utilities</p>
+        </div>
+        <div class="tools-grid">
+          <div class="tool-card">
+            <i class="fas fa-crop-alt"></i>
+            <h3>Smart Resizer</h3>
+            <p>
+              Resize images in bulk to specific dimensions while maintaining
+              quality.
+            </p>
+            <button class="btn">Coming Soon</button>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-folder-open"></i>
+            <h3>Format Converter</h3>
+            <p>
+              Convert between image formats without quality loss. Perfect for
+              WebP conversion.
+            </p>
+            <button class="btn">Coming Soon</button>
+          </div>
+          <div class="tool-card">
+            <i class="fas fa-qrcode"></i>
+            <h3>QR Code Generator</h3>
+            <p>
+              Create custom QR codes for your compressed images to easily share
+              them.
+            </p>
+            <button class="btn">Coming Soon</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="section">
+      <div class="container">
+        <div class="section-header">
+          <h2>Frequently Asked Questions</h2>
+          <p>Find answers to common questions about our image compressor</p>
+        </div>
+        <div class="faq-container">
+          <div class="faq-item">
+            <button class="faq-question">
+              Is my image data secure?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes! All processing happens in your browser. Your images never
+                leave your device, ensuring complete privacy and security.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              What image formats are supported?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We support JPG, PNG, GIF, and WebP formats. You can convert
+                between these formats during compression.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              How much can I reduce my image sizes?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Typically you can reduce image sizes by 50-90% without
+                noticeable quality loss, depending on the format and settings.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question">
+              Is there a limit to how many images I can compress?
+              <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer">
+              <p>
+                You can process up to 20 images at once, with each file being
+                10MB or smaller.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-column">
+            <h4>ImageCompressor Pro</h4>
+            <p>
+              The fastest, easiest way to optimize your images for web and
+              mobile.
+            </p>
+            <div class="social-links">
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-facebook-f"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#tool">Compressor</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#tools">Tools</a></li>
+              <li><a href="#faq">FAQ</a></li>
+            </ul>
+          </div>
+          <div class="footer-column">
+            <h4>Resources</h4>
+            <ul class="footer-links">
+              <li><a href="#">Blog</a></li>
+              <li><a href="#">Documentation</a></li>
+              <li><a href="#">API Access</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>&copy; 2023 ImageCompressor Pro. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script.js -->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <!-- Zip file js -->
+    <script src="js/jszip.min.js"></script>
+    <script src="js/FileSaver.min.js"></script>
+  </body>
+</html>
