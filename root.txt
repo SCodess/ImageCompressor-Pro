@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://yourusername.github.io/image-compressor/sitemap.xml
+Sitemap: https://scodess.github.io/ImageCompressor-Pro/sitemap.xml
